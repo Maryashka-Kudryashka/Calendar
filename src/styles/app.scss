@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+}
+
+#calendar-container {
+  .calendar {
+    background-color: #f7dcf1;
+    display: flex;
+    min-height: 100vh;
+    &__button {
+      width: 25%;
+      border: none;
+      outline: none;
+      &_arrow {
+        width: 40%;
+      }
+      &_previous {
+        background: linear-gradient(to left, transparent, #aeb1bf);
+      }
+      &_next {
+        background: linear-gradient(to right, transparent, #aeb1bf);
+      }
+    }
+    .month {
+      width: 50%;
+      font-family: Gloria Hallelujah;
+      font-weight: bold;
+      &__name {
+        color: #866160;
+        font-size: 45px;
+        margin: 0;
+        text-align: center;
+      }
+       &__year {
+        color: #866160;
+        margin: 0;
+        font-size: 30px;
+        text-align: center;
+      }
+      &__days {
+        display: flex;
+        flex-wrap: wrap;
+        border-radius: 30px;
+        overflow: hidden;
+        box-shadow: 20px 20px 25px #888888;
+        border: 6px solid #4c414f;
+      }
+      &__day {
+        flex: 1 0 14%;
+        padding: 15px 0;
+        background-color: #4e5268;
+        border: 2px solid #f7dcf1;
+        color: #f7dcf1;
+        font-size: 20px;
+        text-align: center;
+        box-sizing: border-box;
+        &:last-of-type {
+          border-bottom-right-radius: 25px;
+        }
+        &:nth-last-of-type(7) {
+          border-bottom-left-radius: 25px;
+        }
+        &:not(.month__day_empty):not(.month__day_weekday):hover {
+          background-color: #c49493;
+          color: #4e5268;
+        }
+        &_empty {
+          background-color: #8a8599;
+        }
+        &_weekday {
+          background-color: transparent;
+          color: #4e5268;
+          padding: 0;
+        }
+        &_today {
+          background-color: #866160;
+        }
+      }
+    }
+  }
+}
