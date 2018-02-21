@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import Month from "./Month";
 
+import leftArrow from '../../img/left-arrow.svg';
+import rightArrow from '../../img/right-arrow.svg';
+
 class Calendar extends Component {
   constructor() {
     super();
@@ -52,11 +55,11 @@ class Calendar extends Component {
     return (
       <section className="calendar">
         <button className="calendar__button calendar__button_previous " onClick={() => this.previousMonth()}>
-          <img className="calendar__button calendar__button_arrow" src='left-arrow.svg'/>
+          <img className="calendar__button calendar__button_arrow" src={leftArrow}/>
         </button>
         <Month month={this.state.currentMonth} year={this.state.currentYear} />
         <button className="calendar__button calendar__button_next" onClick={() => this.nextMonth()}>
-          <img className="calendar__button calendar__button_arrow" src='right-arrow.svg'/>
+          <img className="calendar__button calendar__button_arrow" src={rightArrow}/>
         </button>
       </section>
     );
